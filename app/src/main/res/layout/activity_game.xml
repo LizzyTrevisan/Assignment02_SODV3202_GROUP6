@@ -11,10 +11,13 @@
         android:id="@+id/celebImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="142dp"
+        android:layout_marginTop="80dp"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/todo"
+        android:maxHeight="150dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -22,43 +25,22 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="48dp"
         android:text="@string/textview"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnOption1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="288dp"
-        android:text="@string/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnOption2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/button5"
-        app:layout_constraintStart_toStartOf="@+id/btnOption1"
-        app:layout_constraintTop_toBottomOf="@+id/btnOption1"
-        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/textview1"
+        android:text="@string/game_Question"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold|italic"
@@ -67,33 +49,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/celebImage" />
 
-    <Button
-        android:id="@+id/btnOption3"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/button3"
-        app:layout_constraintStart_toStartOf="@+id/btnOption2"
-        app:layout_constraintTop_toBottomOf="@+id/btnOption2" />
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question">
 
-    <Button
-        android:id="@+id/btnOption4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/button4"
-        app:layout_constraintStart_toStartOf="@+id/btnOption3"
-        app:layout_constraintTop_toBottomOf="@+id/btnOption3" />
+        <Button
+            android:id="@+id/btnOption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="answer"
+            android:text="@string/button_default" />
 
-    <Button
-        android:id="@+id/btnOption5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/button1"
-        app:layout_constraintStart_toStartOf="@+id/btnOption4"
-        app:layout_constraintTop_toBottomOf="@+id/btnOption4"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/btnOption2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="answer"
+            android:text="@string/button_default"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnOption3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="answer"
+            android:text="@string/button_default" />
+
+        <Button
+            android:id="@+id/btnOption4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="answer"
+            android:text="@string/button_default" />
+
+        <Button
+            android:id="@+id/btnOption5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="answer"
+            android:text="@string/button_default"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/previousBtn"
@@ -101,6 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
+        android:onClick="previousQuestion"
         android:text="@string/previous"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -111,6 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="16dp"
+        android:onClick="nextQuestion"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -5,14 +5,9 @@
     <string name="settings">Settings</string>
     <string name="about">About</string>
     <string name="textview">TextView</string>
-    <string name="button">Button</string>
-    <string name="button2">Button_option2\n</string>
-    <string name="textview1">TextView</string>
+    <string name="game_Question">Which Celebrity is this?</string>
     <string name="todo">TODO</string>
-    <string name="button3">Button</string>
-    <string name="button4">Button</string>
-    <string name="button5">Button</string>
-    <string name="button1">Button</string>
+    <string name="button_default">Button</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
 </resources>

@@ -16,6 +16,7 @@
         android:layout_marginTop="240dp"
         android:background="@drawable/rounded_corners_btn"
         android:backgroundTint="@color/navish"
+        android:onClick="startGame"
         android:shadowColor="@color/blackish"
         android:text="@string/start_game"
         android:textColor="@color/white"
