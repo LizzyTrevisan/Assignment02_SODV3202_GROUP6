@@ -10,4 +10,6 @@
     <string name="button_default">Button</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
+    <string name="settings_btnReset_text">Reset</string>
+    <string name="settings_ThemeSwitch_text">Theme</string>>
 </resources>

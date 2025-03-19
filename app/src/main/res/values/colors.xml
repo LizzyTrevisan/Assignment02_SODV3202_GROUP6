@@ -5,6 +5,8 @@
     <color name="grey">#FF808080</color>
     <color name="blackish">#010402</color>
     <color name="greenish">#4bc3b5</color>
+    <color name="dark_greenish">#2E6C7C</color>
     <color name="navish">#1c2c54</color>
+    <color name="light_navish">#365295</color>
     <color name="pinkish">#d175b7</color>
 </resources>
