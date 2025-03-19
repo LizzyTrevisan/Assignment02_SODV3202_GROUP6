@@ -2,6 +2,7 @@ package com.example.assignment02_sodv3202;
 
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -26,7 +28,7 @@ public class GameActivity extends AppCompatActivity{
     int score = 0;
     int questionIndex = 0;
 
-    List<CelebrityGuess> levels = new ArrayList<>();
+    ArrayList<CelebrityGuess> levels = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,38 @@ public class GameActivity extends AppCompatActivity{
         setLevelData(questionIndex);
         updateScore();
     }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState){
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("SCORE", score);
+        outState.putInt("QUESTION", questionIndex);
+
+        //Fixes a "ClassCastException" that is released because of the ArrayList
+        outState.putParcelableArray("QUESTION_ARR", levels.toArray(new CelebrityGuess[0]));
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        score = savedInstanceState.getInt("SCORE");
+        questionIndex = savedInstanceState.getInt("QUESTION");
+
+        Parcelable[] parcelableArr = savedInstanceState.getParcelableArray("QUESTION_ARR");
+
+        if(parcelableArr != null){
+            for(int i = 0; i < levels.size(); i++){
+                levels.set(i, (CelebrityGuess) parcelableArr[i]);
+            }
+        }
+
+        setLevelData(questionIndex);
+        updateScore();
+    }
+
 
     //BUTTON HOOKS
     public void nextQuestion(View view){
@@ -98,7 +132,6 @@ public class GameActivity extends AppCompatActivity{
 
             if(!question.answered){
                 score++;
-                question.answered = true;
             }
 
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
@@ -109,6 +142,7 @@ public class GameActivity extends AppCompatActivity{
             Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT).show();
         }
 
+        question.answered = true;
     }
 
     //END OF BUTTON HOOKS

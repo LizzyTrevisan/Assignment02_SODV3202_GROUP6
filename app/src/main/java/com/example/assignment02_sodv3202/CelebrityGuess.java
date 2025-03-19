@@ -1,6 +1,15 @@
 package com.example.assignment02_sodv3202;
 
-public class CelebrityGuess {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+import org.jetbrains.annotations.NotNull;
+
+//Parcelable is implemented in case data must be transferred.
+
+public class CelebrityGuess implements Parcelable {
 
     public int imageResourceID;
 
@@ -8,12 +17,24 @@ public class CelebrityGuess {
 
     public String correctAnswer;
 
-    public boolean answered = false;
+    public boolean answered;
 
     public CelebrityGuess(int image, String[] options, String correctAnswer) {
         this.imageResourceID = image;
         this.options = options;
         this.correctAnswer = correctAnswer;
+
+        this.answered = false;
+    }
+
+    protected CelebrityGuess(@NotNull Parcel parcel){
+        this.imageResourceID = parcel.readInt();
+
+        parcel.readStringArray(options);
+
+        this.correctAnswer = parcel.readString();
+
+        this.answered = parcel.readByte() != 0;
     }
 
     public boolean verifyAnswer(String guess){
@@ -58,4 +79,30 @@ public class CelebrityGuess {
                 }, "Leonardo DiCaprio")
         };
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(this.imageResourceID);
+        dest.writeStringArray(this.options);
+        dest.writeString(this.correctAnswer);
+        dest.writeByte((byte) (this.answered ? 1 : 0));
+    }
+
+
+    public static final Creator<CelebrityGuess> CREATOR = new Creator<CelebrityGuess>() {
+        @Override
+        public CelebrityGuess createFromParcel(Parcel in) {
+            return new CelebrityGuess(in);
+        }
+
+        @Override
+        public CelebrityGuess[] newArray(int size) {
+            return new CelebrityGuess[size];
+        }
+    };
 }

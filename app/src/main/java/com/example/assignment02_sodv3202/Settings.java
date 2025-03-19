@@ -1,5 +1,9 @@
 package com.example.assignment02_sodv3202;
 
+
+
+
+// Static class for altering settings through the SettingsActivity
 public class Settings {
 
     public static int MAX_LEVELS = 5;
