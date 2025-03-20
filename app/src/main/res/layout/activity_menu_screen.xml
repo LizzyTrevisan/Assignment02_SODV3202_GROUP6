@@ -44,6 +44,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corners_btn"
         android:backgroundTint="@color/navish"
+        android:onClick="aboutGame"
         android:text="@string/about"
         app:layout_constraintStart_toStartOf="@+id/btnSettings"
         app:layout_constraintTop_toBottomOf="@+id/btnSettings" />

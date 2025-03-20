@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnAbout = findViewById(R.id.btnAbout);
 
 
+
     }
 
     public void startGame(View view){
@@ -45,4 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void aboutGame(View view){
+        Intent intent =new Intent(this, AboutActivity.class);
+
+        startActivity(intent);
+    }
+
+
 }
