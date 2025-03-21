@@ -11,38 +11,50 @@ public class Settings {
     private static final String KEY_MAX_LEVELS = "max_levels";
     private static final String KEY_DARK_THEME = "dark_theme";
 
-    private static final int MAX_LEVELS_LIMIT = 10; // max of questions
+    public static final int MAX_LEVELS_LIMIT = 10; // max of questions
+    public static final int MIN_LEVELS_LIMIT = 5;
+    public static final int DEFAULT_LEVELS_LIMIT = 5;
 
-    // Recover the number of questions level
-
-
-
+    /**
+    *
+    * @return 5 by default, unless the user has changed the settings
+    */
     public static int getMaxLevels(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        // Retorna 5 por padrão, a menos que o usuário tenha alterado nas configurações
-        return prefs.getInt(KEY_MAX_LEVELS, 5);
+        // Returns 5 by default, unless the user has changed the settings
+        return prefs.getInt(KEY_MAX_LEVELS, DEFAULT_LEVELS_LIMIT);
     }
 
-    // Define the number of questions level
-    public static void setMaxLevels(Context context, int newMax) {
+    /**
+     * Sets the number of levels to the user-defined value.
+     *
+     * @param newLevelCount The user's input
+     */
+    public static void setMaxLevels(Context context, int newLevelCount) {
         // Validation to make sure the min is 5 and max is 10 for the questions
-        if (newMax >= 5 && newMax <= MAX_LEVELS_LIMIT) {
+        if (newLevelCount >= MIN_LEVELS_LIMIT && newLevelCount <= MAX_LEVELS_LIMIT) {
             SharedPreferences.Editor editor = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit();
-            editor.putInt(KEY_MAX_LEVELS, newMax);
+            editor.putInt(KEY_MAX_LEVELS, newLevelCount);
             editor.apply();
         } else {
             //It will show the toast in case the number is invalid
-            Toast.makeText(context, "Invalid Entry. The number of questions must be between 5 and " + MAX_LEVELS_LIMIT, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Invalid Entry. The number of questions must be between"
+                    + MIN_LEVELS_LIMIT + " and " + MAX_LEVELS_LIMIT, Toast.LENGTH_SHORT).show();
         }
     }
 
     // Verifies if is in dark mode theme
     public static boolean isDarkTheme(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        return prefs.getBoolean(KEY_DARK_THEME, false); // the standard value will be always light mode
+        return prefs.getBoolean(KEY_DARK_THEME, true); // the standard value will be always light mode
     }
 
-    // the toogle between light and dark modes
+    //
+    /**
+     * the toggle between light and dark modes
+     *
+     * @param isDark Sets the dark mode to the input's value (true of false)
+     */
     public static void toggleTheme(Context context, boolean isDark) {
         SharedPreferences.Editor editor = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit();
         editor.putBoolean(KEY_DARK_THEME, isDark);
@@ -54,23 +66,14 @@ public class Settings {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
     }
-}
 
-
-
-   /* public static void setMaxLevels(int newMax) {
-        if (newMax > 0 && newMax <= 10) {
-            MAX_LEVELS = newMax;
-        }
-    }
 
     public static void toggleTheme(boolean input) {
         if (input) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
-           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             //DARK_THEME = input;
         }
     }
 }
-*/

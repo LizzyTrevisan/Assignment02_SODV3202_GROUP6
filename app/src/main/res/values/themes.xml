@@ -1,9 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Assignment02_SODV3202" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="CelebrityGuessTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="colorPrimary">@color/lightMode_primary</item>
+        <item name="colorPrimaryDark">@color/darkMode_background</item>
+        <item name="colorAccent">@color/lightMode_secondary</item>
+        <item name="android:textColorPrimary">@color/lightMode_text</item>
+        <item name="android:background">@color/lightMode_primary</item>
+
+        <item name="android:buttonStyle">@style/Widget.CelebrityGuessTheme.Button</item>
+
     </style>
 
-    <style name="Theme.Assignment02_SODV3202" parent="Base.Theme.Assignment02_SODV3202" />
+    <style name="Widget.CelebrityGuessTheme.Button" parent="Widget.AppCompat.Button.Borderless.Colored">
+
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/navish</item>
+        <item name="android:radius">10dp</item>
+        <item name="android:background">@drawable/rounded_corners_btn</item>
+    </style>
 </resources>

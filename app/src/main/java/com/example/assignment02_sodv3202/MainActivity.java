@@ -14,13 +14,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    GameActivity[] questions = new GameActivity[5];
 
     Button btnStartGame, btnSettings, btnAbout;
 
     ImageView celebImage;
     int scoreCount = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         btnSettings = findViewById(R.id.btnSettings);
         btnAbout = findViewById(R.id.btnAbout);
 
-
+        //Resetting back to 5
+        Settings.setMaxLevels(this, Settings.DEFAULT_LEVELS_LIMIT);
 
     }
 

@@ -1,7 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Assignment02_SODV3202" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <style name="CelebrityGuessTheme.Night" parent="CelebrityGuessTheme">
+        <item name="android:background">@color/darkMode_background</item>
     </style>
+
+    <style name="Widget.CelebrityGuessTheme.Night.Button" parent="Widget.AppCompat.Button">
+
+        <item name="android:background">@color/darkMode_btnBackground</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

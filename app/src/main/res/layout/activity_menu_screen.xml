@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greenish"
 
+    android:theme="@style/CelebrityGuessTheme"
     tools:context=".MainActivity">
 
     <Button
@@ -15,16 +15,11 @@
         android:layout_height="50dp"
         android:layout_marginTop="240dp"
         android:background="@drawable/rounded_corners_btn"
-        android:backgroundTint="@color/navish"
         android:onClick="startGame"
-        android:shadowColor="@color/blackish"
         android:text="@string/start_game"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/white" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -32,7 +27,6 @@
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corners_btn"
-        android:backgroundTint="@color/navish"
         android:onClick="settings"
         android:text="@string/settings"
         app:layout_constraintStart_toStartOf="@+id/btnStartGame"
@@ -44,7 +38,6 @@
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corners_btn"
-        android:backgroundTint="@color/navish"
         android:onClick="settings"
         android:text="@string/about"
         app:layout_constraintStart_toStartOf="@+id/btnSettings"

@@ -9,4 +9,16 @@
     <color name="navish">#1c2c54</color>
     <color name="light_navish">#365295</color>
     <color name="pinkish">#d175b7</color>
+    <color name="settings_themeBg">#306CDD</color>
+
+    <color name="darkMode_background">#04201F</color>
+    <color name="darkMode_btnBackground">#257C62</color>
+    <color name="darkMode_btnText">@color/white</color>
+
+    <color name="lightMode_primary">@color/greenish</color>
+    <color name="lightMode_secondary">@color/dark_greenish</color>
+    <color name="lightMode_text">@color/white</color>
+
+    <color name="game_ButtonBarColor">#2196F3</color>
+
 </resources>

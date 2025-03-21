@@ -46,13 +46,7 @@ public class GameActivity extends AppCompatActivity{
         celebImage = findViewById(R.id.celebImage);
 
         //added this to make sure the game starts with 5 and not the saved settings from previous game
-        int maxLevels = Settings.getMaxLevels(this);
-
-        if (maxLevels < 5 || maxLevels > 10) {
-            maxLevels = 5;  //
-
-
-        }
+        maxLevels = Settings.getMaxLevels(this);
 
         CelebrityGuess[] totalGuesses = CelebrityGuess.generateTotalGuesses();
 
@@ -135,7 +129,7 @@ public class GameActivity extends AppCompatActivity{
         score = 0;
         questionIndex = 0;
         for (CelebrityGuess question : levels) {
-            question.answered = false;  // Resetando as respostas
+            question.answered = false;  // Reset to false
         }
         setLevelData(questionIndex);
         updateScore();
