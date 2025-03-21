@@ -1,6 +1,7 @@
 package com.example.assignment02_sodv3202;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
@@ -15,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class GameActivity extends AppCompatActivity{
 
@@ -24,7 +24,7 @@ public class GameActivity extends AppCompatActivity{
 
     ImageView celebImage;
 
-
+    int maxLevels;
     int score = 0;
     int questionIndex = 0;
 
@@ -45,10 +45,25 @@ public class GameActivity extends AppCompatActivity{
         scoreText = findViewById(R.id.score);
         celebImage = findViewById(R.id.celebImage);
 
+        //added this to make sure the game starts with 5 and not the saved settings from previous game
+        int maxLevels = Settings.getMaxLevels(this);
+
+        if (maxLevels < 5 || maxLevels > 10) {
+            maxLevels = 5;  //
+
+
+        }
+
         CelebrityGuess[] totalGuesses = CelebrityGuess.generateTotalGuesses();
 
-        //Basically, this adds all the levels, BUT, only up till the user specified max.
-        levels.addAll(Arrays.asList(totalGuesses).subList(0, Settings.MAX_LEVELS));
+       //it will limit the max of the questions available to the user's choice
+        maxLevels = Math.min(maxLevels, totalGuesses.length);
+
+        //add the levels chosen by the user
+        levels.addAll(Arrays.asList(totalGuesses).subList(0, maxLevels));
+
+        setLevelData(questionIndex);
+        updateScore();
     }
 
     @Override
@@ -114,6 +129,24 @@ public class GameActivity extends AppCompatActivity{
         questionIndex--;
 
         setLevelData(questionIndex);
+    }
+
+    public void resetGame(View view) {
+        score = 0;
+        questionIndex = 0;
+        for (CelebrityGuess question : levels) {
+            question.answered = false;  // Resetando as respostas
+        }
+        setLevelData(questionIndex);
+        updateScore();
+    }
+
+    public void mainMenu(View view){
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 
     public void answer(View view){

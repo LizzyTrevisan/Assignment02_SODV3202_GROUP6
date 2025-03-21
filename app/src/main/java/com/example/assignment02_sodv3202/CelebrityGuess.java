@@ -64,7 +64,7 @@ public class CelebrityGuess implements Parcelable {
                 }, "Scarlett Johansson")
             , new CelebrityGuess(R.drawable.adele, new String[] {
                 "Taylor Swift", "Adele", "Billie Eilish", "Mariah Carey", "Celine Dion"
-                }, "Taylor Swift")
+                }, "Adele")
             , new CelebrityGuess(R.drawable.lady_gaga, new String[] {
                 "Beyoncé", "Lady Gaga", "Taylor Swift", "Ariana Grande", "Rihanna"
                 }, "Lady Gaga")

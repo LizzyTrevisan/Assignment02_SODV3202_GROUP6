@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -14,6 +13,7 @@
         android:layout_height="match_parent"
         android:layout_margin="40dp"
         android:background="@drawable/settings_bg"
+        android:backgroundTint="@color/light_navish"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp">
@@ -26,7 +26,7 @@
             android:padding="15dp"
             android:text="@string/settings"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
@@ -34,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/dark_greenish"
+            android:onClick="resetSettings"
             android:paddingLeft="32dp"
             android:paddingTop="8dp"
             android:paddingRight="32dp"
@@ -47,9 +48,31 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:padding="10dp"
-            android:text="@string/settings_ThemeSwitch_text"
+            android:text="@string/dark_mode_theme"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <EditText
+            android:id="@+id/etMaxLevels"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:hint="@string/number_of_guesses"
+            android:inputType="number"
+            android:textColor="@color/dark_greenish"
+            android:textColorHint="@color/dark_greenish" />
+
+        <Button
+            android:id="@+id/btn_SaveSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/dark_greenish"
+            android:onClick="settings"
+            android:text="@string/save_settings" />
+
 
     </LinearLayout>
 
