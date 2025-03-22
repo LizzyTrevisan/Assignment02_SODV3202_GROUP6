@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="background">#04201F</color>
+    <color name="btnBackground">#257C62</color>
+    <color name="btnText">@color/white</color>
+
+</resources>
