@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="40dp"
+        android:layout_margin="30dp"
         android:background="@drawable/settings_bg"
         android:backgroundTint="@color/light_navish"
         android:padding="20dp">
@@ -20,7 +20,7 @@
             android:id="@+id/settings_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/settings_bg"
             android:backgroundTint="@color/settings_themeBg"
             android:padding="15dp"
@@ -32,26 +32,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/settings_btnReset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="@color/game_ButtonBarColor"
-            android:onClick="resetSettings"
-            android:paddingLeft="32dp"
-            android:paddingTop="8dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="8dp"
-            android:text="@string/settings_btnReset_text"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/settings_bg"
             android:backgroundTint="@color/settings_themeBg"
             android:orientation="horizontal"
@@ -75,7 +59,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/settings_bg"
             android:backgroundTint="@color/settings_themeBg"
             android:orientation="horizontal"
@@ -111,16 +95,33 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/settings_btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/game_ButtonBarColor"
+            android:onClick="resetSettings"
+            android:text="@string/settings_btnReset_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/settings_btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:onClick="goBack"
+            android:text="@string/settings_btnBack"
+            app:layout_constraintStart_toEndOf="@+id/settings_btnReset"
+            app:layout_constraintTop_toTopOf="@+id/settings_btnReset" />
+
+        <Button
             android:id="@+id/settings_btn_SaveSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/game_ButtonBarColor"
             android:onClick="settings"
-            android:paddingLeft="32dp"
-            android:paddingTop="8dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="8dp"
             android:text="@string/save_settings"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

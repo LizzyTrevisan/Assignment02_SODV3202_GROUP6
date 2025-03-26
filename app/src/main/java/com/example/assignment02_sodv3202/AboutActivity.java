@@ -23,14 +23,11 @@ public class AboutActivity extends AppCompatActivity {
 
         // it will allow to go back to main menu
         Button backToMenuBtn = findViewById(R.id.backToMenuBtn);
-        backToMenuBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AboutActivity.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // close all the activities
-                startActivity(intent);
-                finish(); // close about page
-            }
+        backToMenuBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(AboutActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // close all the activities
+            startActivity(intent);
+            finish(); // close about page
         });
     }
 }

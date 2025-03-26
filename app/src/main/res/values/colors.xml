@@ -11,13 +11,15 @@
     <color name="pinkish">#d175b7</color>
     <color name="settings_themeBg">#306CDD</color>
 
-    <color name="darkMode_background">#04201F</color>
-    <color name="darkMode_btnBackground">#257C62</color>
-    <color name="darkMode_btnText">@color/white</color>
+<!-- Theme values -->
 
-    <color name="lightMode_primary">@color/greenish</color>
-    <color name="lightMode_secondary">@color/dark_greenish</color>
-    <color name="lightMode_text">@color/white</color>
+    <color name="primary">@color/greenish</color>
+    <color name="secondary">@color/dark_greenish</color>
+    <color name="text">@color/white</color>
+
+    <color name="background">@color/greenish</color>
+    <color name="btnBackground">@color/navish</color>
+    <color name="btnText">@color/white</color>
 
     <color name="game_ButtonBarColor">#2196F3</color>
 

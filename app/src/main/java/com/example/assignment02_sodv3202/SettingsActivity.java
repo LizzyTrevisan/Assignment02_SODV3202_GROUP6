@@ -50,6 +50,10 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
+    public void goBack(View view){
+        finish();
+    }
+
     private void saveSettings(View view){
         // saves the level(max of questions)
         String maxQuestionsStr = editMaxQuestions.getText().toString();
