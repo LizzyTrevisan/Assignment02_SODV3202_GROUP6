@@ -11,8 +11,8 @@
 
     <Button
         android:id="@+id/btnStartGame"
-        android:layout_width="124dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/menu_btnWidth"
+        android:layout_height="@dimen/menu_btnHeight"
         android:layout_marginTop="240dp"
         android:background="@drawable/rounded_corners_btn"
         android:onClick="startGame"
@@ -23,8 +23,8 @@
 
     <Button
         android:id="@+id/btnSettings"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/menu_btnWidth"
+        android:layout_height="@dimen/menu_btnHeight"
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corners_btn"
         android:onClick="settings"
@@ -34,8 +34,8 @@
 
     <Button
         android:id="@+id/btnAbout"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/menu_btnWidth"
+        android:layout_height="@dimen/menu_btnHeight"
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corners_btn"
         android:onClick="aboutGame"
