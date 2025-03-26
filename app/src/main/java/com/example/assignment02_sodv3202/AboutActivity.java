@@ -16,11 +16,9 @@ public class AboutActivity extends AppCompatActivity {
 
         // Define o texto sobre o app
         TextView aboutText = findViewById(R.id.aboutText);
-        aboutText.setText("Celebrity Game App\n\n" +
-                "A fun and interactive game, in which players guess celebrities based on the pictures displayed.\n\n"  +
-                "Created by: Sameel Haider & Leiziane Trevisan Dardin\n" +
-                "Version: 1.0\n" +
-                "Release Date: April 5, 2025");
+        aboutText.setText(String.format("Celebrity Game App\n" +
+                "\nA fun and interactive game, in which players guess celebrities based on the pictures displayed.\n" +
+                "\nCreated by: Sameel Haider & Leiziane Trevisan Dardin\nVersion: 1.0\nRelease Date: April 5, 2025"));
 
         // it will allow to go back to main menu
         Button backToMenuBtn = findViewById(R.id.backToMenuBtn);
