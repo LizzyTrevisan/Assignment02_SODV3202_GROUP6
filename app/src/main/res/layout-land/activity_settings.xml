@@ -20,7 +20,7 @@
             android:id="@+id/settings_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/rounded_bg"
             android:backgroundTint="@color/settings_themeBg"
             android:padding="15dp"
@@ -29,70 +29,81 @@
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/rounded_bg"
-            android:backgroundTint="@color/settings_themeBg"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-            <Switch
-                android:id="@+id/settings_switchTheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:text="@string/dark_mode_theme"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:background="@drawable/rounded_bg"
-            android:backgroundTint="@color/settings_themeBg"
-            android:orientation="horizontal"
-            android:padding="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/light_navish"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.935"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings_Title">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/settings_GuessNum_title"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/settings_themeBg"
-                android:padding="10dp"
-                android:text="@string/settings_GuessNum_Title"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                tools:ignore="TextContrastCheck" />
-
-            <EditText
-                android:id="@+id/etMaxLevels"
-                android:layout_width="wrap_content"
-                android:layout_height="61dp"
-                android:autofillHints=""
                 android:background="@drawable/rounded_bg"
-                android:backgroundTint="@color/navish"
-                android:gravity="center"
-                android:hint="@string/number_of_guesses"
-                android:inputType="number"
-                android:minWidth="48dp"
-                android:padding="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/dark_greenish" />
+                android:backgroundTint="@color/settings_themeBg"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/settings_GuessNum_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/settings_themeBg"
+                    android:padding="10dp"
+                    android:text="@string/settings_GuessNum_Title"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <EditText
+                    android:id="@+id/etMaxLevels"
+                    android:layout_width="wrap_content"
+                    android:layout_height="61dp"
+                    android:autofillHints=""
+                    android:background="@drawable/rounded_bg"
+                    android:backgroundTint="@color/navish"
+                    android:gravity="center"
+                    android:hint="@string/number_of_guesses"
+                    android:inputType="number"
+                    android:minWidth="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/dark_greenish"
+                    tools:ignore="TextContrastCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_bg"
+                android:backgroundTint="@color/settings_themeBg"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/settings_switchTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:padding="12dp"
+                    android:text="@string/dark_mode_theme"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <Button
@@ -104,7 +115,8 @@
             android:onClick="resetSettings"
             android:text="@string/settings_btnReset_text"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/settings_btnBack"
@@ -130,7 +142,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/settings_btnBack"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="TextContrastCheck" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

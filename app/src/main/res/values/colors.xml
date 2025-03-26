@@ -26,6 +26,8 @@
     <color name="primary1">#FFBB86FC</color>
     <color name="text2">#FFFFFFFF</color>
     <color name="colorPrimaryVariant">#0000FF</color>
+    <color name="transparent">#000000</color>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>

@@ -5,17 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greenish"
 
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnStartGame"
-        android:layout_width="124dp"
+        android:layout_width="@dimen/menu_btnWidth"
         android:layout_height="50dp"
         android:layout_marginTop="92dp"
         android:background="@drawable/rounded_corners_btn"
-        android:backgroundTint="@color/navish"
         android:onClick="startGame"
         android:shadowColor="@color/blackish"
         android:text="@string/start_game"
@@ -28,20 +26,22 @@
 
     <Button
         android:id="@+id/btnSettings"
-        android:layout_width="125dp"
+        android:layout_width="@dimen/menu_btnWidth"
         android:layout_height="50dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/rounded_corners_btn"
+        android:onClick="settings"
         android:text="@string/settings"
         app:layout_constraintStart_toStartOf="@+id/btnStartGame"
         app:layout_constraintTop_toBottomOf="@+id/btnStartGame" />
 
     <Button
         android:id="@+id/btnAbout"
-        android:layout_width="125dp"
+        android:layout_width="@dimen/menu_btnWidth"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corners_btn"
+        android:onClick="aboutGame"
         android:text="@string/about"
         app:layout_constraintStart_toStartOf="@+id/btnSettings"
         app:layout_constraintTop_toBottomOf="@+id/btnSettings" />
