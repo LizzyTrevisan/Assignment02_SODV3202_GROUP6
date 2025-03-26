@@ -19,6 +19,7 @@
         app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -123,7 +124,7 @@
             android:id="@+id/previousBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
             android:backgroundTint="@color/game_ButtonBarColor"
             android:onClick="previousQuestion"
             android:text="@string/previous"
@@ -134,7 +135,7 @@
             android:id="@+id/reset_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
             android:backgroundTint="@color/game_ButtonBarColor"
             android:onClick="resetGame"
             android:text="@string/settings_btnReset_text"
@@ -145,7 +146,7 @@
             android:id="@+id/main_menu_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
             android:backgroundTint="@color/game_ButtonBarColor"
             android:onClick="mainMenu"
             android:text="@string/game_btn_BackToMenu"
@@ -156,7 +157,7 @@
             android:id="@+id/nextBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
             android:backgroundTint="@color/game_ButtonBarColor"
             android:onClick="nextQuestion"
             android:text="@string/next"
