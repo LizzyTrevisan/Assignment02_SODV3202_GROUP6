@@ -67,13 +67,4 @@ public class Settings {
         }
     }
 
-
-    public static void toggleTheme(boolean input) {
-        if (input) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            //DARK_THEME = input;
-        }
-    }
 }

@@ -21,4 +21,8 @@
         <item name="android:radius">10dp</item>
         <item name="android:background">@drawable/rounded_corners_btn</item>
     </style>
+    <style name="MyNightTheme" parent="Theme.AppCompat.DayNight">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:textColor">@color/text</item>
+    </style>
 </resources>
