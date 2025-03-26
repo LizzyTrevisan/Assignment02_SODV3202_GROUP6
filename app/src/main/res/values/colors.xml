@@ -22,8 +22,12 @@
     <color name="btnBackground">@color/navish</color>
     <color name="btnText">@color/white</color>
 
-    <color name="game_ButtonBarColor">#2196F3</color>
-    <color name="primary">#FFBB86FC</color>
-    <color name="text">#FFFFFFFF</color>
+   <color name="game_ButtonBarColor">#2196F3</color>
+    <color name="primary1">#FFBB86FC</color>
+    <color name="text2">#FFFFFFFF</color>
+    <color name="colorPrimaryVariant">#0000FF</color>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
 
 </resources>

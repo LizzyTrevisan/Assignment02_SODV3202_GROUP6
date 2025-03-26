@@ -109,9 +109,11 @@
             android:id="@+id/settings_btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="1dp"
             android:onClick="goBack"
             android:text="@string/settings_btnBack"
+            app:layout_constraintEnd_toStartOf="@+id/settings_btn_SaveSettings"
+            app:layout_constraintHorizontal_bias="0.45"
             app:layout_constraintStart_toEndOf="@+id/settings_btnReset"
             app:layout_constraintTop_toTopOf="@+id/settings_btnReset" />
 
@@ -121,13 +123,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/game_ButtonBarColor"
-            android:onClick="settings"
+            android:onClick="saveSettings"
             android:text="@string/save_settings"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.91"
-            app:layout_constraintStart_toEndOf="@+id/settings_btnReset" />
+            app:layout_constraintTop_toTopOf="@+id/settings_btnBack"
+            app:layout_constraintVertical_bias="1.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
